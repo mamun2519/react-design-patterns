@@ -1,6 +1,6 @@
-import { MouseTracker } from './examples/EX5_RP1';
-import { DisableContextMenu } from './examples/EX6_RP2';
-import { ListRenderer } from './examples/EX7_RP3';
+import { MouseTracker } from './examples/lecture_1/EX5_RP1';
+import { DisableContextMenu } from './examples/lecture_1/EX6_RP2';
+import { ListRenderer } from './examples/lecture_1/EX7_RP3';
 
 export default function App() {
 	return (

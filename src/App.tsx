@@ -1,4 +1,4 @@
-import DragAndDrop from './examples/EX8.RP4';
+import DragAndDrop from './examples/lecture_1/EX8_RP4';
 import { useState } from 'react';
 
 export default function App() {
