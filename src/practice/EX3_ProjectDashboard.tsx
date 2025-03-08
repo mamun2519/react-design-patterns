@@ -165,13 +165,13 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
       <>
         <ProjectInfo project={project} status={status} />
         <UpdateStatusButton updateStatus={updateStatus} />
+        <TeamMember team={team} />
       </>
     ) : (
       <p>Loading...</p>
     )}
 
     {/* Team Members */}
-    <TeamMember team={team} />
 
     {/* Comments Section */}
     <h3>Comments</h3>
