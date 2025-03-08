@@ -153,11 +153,6 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   };
 
   // Handle Adding New Comment
-  const addComment = () => {
-    if (newComment.trim() === "") return;
-    setComments([...comments, { id: Date.now(), text: newComment }]);
-    setNewComment("");
-  };
 
   <div>
     {/* Project Info */}
@@ -171,14 +166,6 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
     ) : (
       <p>Loading...</p>
     )}
-
-    <input
-      type="text"
-      placeholder="Add a comment..."
-      value={newComment}
-      onChange={(e) => setNewComment(e.target.value)}
-    />
-    <button onClick={addComment}>Post</button>
   </div>;
 };
 
@@ -216,6 +203,12 @@ const TeamMember = ({ team }: { team: Team[] }) => {
 };
 
 const CommentList = ({ comments }: { comments: Comment[] }) => {
+  const addComment = () => {
+    if (newComment.trim() === "") return;
+    setComments([...comments, { id: Date.now(), text: newComment }]);
+    setNewComment("");
+  };
+
   return (
     <>
       <h3>Comments</h3>
@@ -224,6 +217,14 @@ const CommentList = ({ comments }: { comments: Comment[] }) => {
           <li key={comment.id}>{comment.text}</li>
         ))}
       </ul>
+
+      <input
+        type="text"
+        placeholder="Add a comment..."
+        value={newComment}
+        onChange={(e) => setNewComment(e.target.value)}
+      />
+      <button onClick={addComment}>Post</button>
     </>
   );
 };
