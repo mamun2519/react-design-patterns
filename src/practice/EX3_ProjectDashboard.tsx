@@ -97,3 +97,34 @@ const ProjectDashboard = ({ projectId }: { projectId: string }) => {
 };
 
 export default ProjectDashboard;
+
+//* Good Example
+
+type Team = {
+  id: number;
+  name: string;
+  avatar: string;
+};
+
+type Comment = {
+  id: number;
+  text: string;
+};
+
+type Project = {
+  name: string;
+  description: string;
+  deadline: string;
+  team: Team[];
+  comments: Comment[];
+};
+
+export const ProjectDashboardGood = () => {
+  const [project, setProject] = useState<Project | null>(null);
+
+  const [team, setTeam] = useState<Team[]>([]);
+
+  const [comments, setComments] = useState<{ id: number; text: string }[]>([]);
+  const [newComment, setNewComment] = useState("");
+  const [status, setStatus] = useState("In Progress");
+};
