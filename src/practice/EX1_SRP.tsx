@@ -53,4 +53,9 @@ export const DashboardBad = () => {
 
 // Good Example:
 
-export const DashboardGood = () => {};
+export const DashboardGood = () => {
+  const [user, _setUser] = useState({
+    name: "John Doe",
+    email: "john@example.com",
+  });
+};
