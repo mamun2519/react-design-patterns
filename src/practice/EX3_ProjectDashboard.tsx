@@ -124,7 +124,7 @@ export const ProjectDashboardGood = () => {
 
   const [team, setTeam] = useState<Team[]>([]);
 
-  const [comments, setComments] = useState<{ id: number; text: string }[]>([]);
+  const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [status, setStatus] = useState("In Progress");
 };
