@@ -162,7 +162,7 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   <div>
     {/* Project Info */}
     {project ? (
-      <ProjectInfo project={project} updateStatus={updateStatus} />
+      <ProjectInfo project={project} status={status} />
     ) : (
       <p>Loading...</p>
     )}
@@ -187,16 +187,13 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   </div>;
 };
 
-const ProjectInfo = ({ project, updateStatus }: any) => {
+const ProjectInfo = ({ project, status }: any) => {
   return (
     <div>
       <h1>{project.name}</h1>
       <p>{project.description}</p>
       <p>Deadline: {new Date(project.deadline).toDateString()}</p>
       <p>Status: {status}</p>
-      <button onClick={() => updateStatus("Completed")}>
-        Mark as Completed
-      </button>
     </div>
   );
 };
