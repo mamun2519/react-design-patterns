@@ -153,11 +153,6 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   };
 
   // Handle Adding New Comment
-  const addComment = () => {
-    if (newComment.trim() === "") return;
-    setComments([...comments, { id: Date.now(), text: newComment }]);
-    setNewComment("");
-  };
 
   <div>
     {/* Project Info */}
@@ -166,7 +161,7 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
         <ProjectInfo project={project} status={status} />
         <UpdateStatusButton updateStatus={updateStatus} />
         <TeamMember team={team} />
-        <CommentList comments={comments} />
+        <CommentList comments={comments} setComments={setComments} />
       </>
     ) : (
       <p>Loading...</p>
@@ -215,6 +210,12 @@ const CommentList = ({
   setComments: any;
 }) => {
   const [newComment, setNewComment] = useState("");
+  const addComment = () => {
+    if (newComment.trim() === "") return;
+    setComments([...comments, { id: Date.now(), text: newComment }]);
+    setNewComment("");
+  };
+
   return (
     <>
       <h3>Comments</h3>
