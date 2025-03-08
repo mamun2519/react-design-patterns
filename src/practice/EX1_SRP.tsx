@@ -50,3 +50,7 @@ export const DashboardBad = () => {
     </div>
   );
 };
+
+// Good Example:
+
+export const DashboardGood = () => {};
