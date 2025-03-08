@@ -166,20 +166,12 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
         <ProjectInfo project={project} status={status} />
         <UpdateStatusButton updateStatus={updateStatus} />
         <TeamMember team={team} />
+        <CommentList comments={comments} />
       </>
     ) : (
       <p>Loading...</p>
     )}
 
-    {/* Team Members */}
-
-    {/* Comments Section */}
-    <h3>Comments</h3>
-    <ul>
-      {comments.map((comment) => (
-        <li key={comment.id}>{comment.text}</li>
-      ))}
-    </ul>
     <input
       type="text"
       placeholder="Add a comment..."
@@ -217,6 +209,19 @@ const TeamMember = ({ team }: { team: Team[] }) => {
             <img src={member.avatar} alt={member.name} width="30" />{" "}
             {member.name}
           </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+const CommentList = ({ comments }: { comments: Comment[] }) => {
+  return (
+    <>
+      <h3>Comments</h3>
+      <ul>
+        {comments.map((comment) => (
+          <li key={comment.id}>{comment.text}</li>
         ))}
       </ul>
     </>
