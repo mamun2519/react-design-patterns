@@ -201,3 +201,17 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
     <button onClick={addComment}>Post</button>
   </div>;
 };
+
+const ProjectInfo = ({ project, updateStatus }: any) => {
+  return (
+    <div>
+      <h1>{project.name}</h1>
+      <p>{project.description}</p>
+      <p>Deadline: {new Date(project.deadline).toDateString()}</p>
+      <p>Status: {status}</p>
+      <button onClick={() => updateStatus("Completed")}>
+        Mark as Completed
+      </button>
+    </div>
+  );
+};
