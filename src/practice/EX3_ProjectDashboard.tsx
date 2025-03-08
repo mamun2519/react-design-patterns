@@ -119,7 +119,7 @@ type Project = {
   comments: Comment[];
 };
 
-export const ProjectDashboardGood = () => {
+export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   const [project, setProject] = useState<Project | null>(null);
 
   const [team, setTeam] = useState<Team[]>([]);
@@ -127,6 +127,37 @@ export const ProjectDashboardGood = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [status, setStatus] = useState("In Progress");
+
+  useEffect(() => {
+    fetch(`/api/projects/${projectId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProject(data);
+        setTeam(data.team);
+      })
+      .catch(() => console.log("Error loading project"));
+  }, [projectId]);
+
+  // Fetch Comments
+  useEffect(() => {
+    fetch(`/api/projects/${projectId}/comments`)
+      .then((res) => res.json())
+      .then((data) => setComments(data))
+      .catch(() => console.log("Error loading comments"));
+  }, [projectId]);
+
+  // Update Status
+  const updateStatus = (newStatus: string) => {
+    setStatus(newStatus);
+    console.log(`Project status updated to: ${newStatus}`);
+  };
+
+  // Handle Adding New Comment
+  const addComment = () => {
+    if (newComment.trim() === "") return;
+    setComments([...comments, { id: Date.now(), text: newComment }]);
+    setNewComment("");
+  };
 
   <div>
     {/* Project Info */}
