@@ -72,14 +72,7 @@ export const DashboardGood = () => {
       <UserProfile user={user} />
 
       {/* Notifications */}
-      <div>
-        <h2>Notifications</h2>
-        <ul>
-          {notifications.map((n, i) => (
-            <li key={i}>{n}</li>
-          ))}
-        </ul>
-      </div>
+      <Notifications notifications={notifications} />
 
       {/* Tasks */}
       <div>
@@ -108,13 +101,26 @@ export const UserProfile = ({
   );
 };
 
-export const Notifications = () => {
+export const Notifications = ({ notifications }: any) => {
   return (
     <div>
       <h2>Notifications</h2>
       <ul>
         {notifications.map((n, i) => (
           <li key={i}>{n}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export const Tasks = ({ tasks }: any) => {
+  return (
+    <div>
+      <h2>Tasks</h2>
+      <ul>
+        {tasks.map((t, i) => (
+          <li key={i}>{t}</li>
         ))}
       </ul>
     </div>
