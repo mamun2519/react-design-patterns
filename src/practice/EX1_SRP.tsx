@@ -65,7 +65,7 @@ export const DashboardGood = () => {
       <Notifications />
 
       {/* Tasks */}
-      <Tasks Tasks={tasks} />
+      <Tasks />
     </div>
   );
 };
