@@ -127,4 +127,46 @@ export const ProjectDashboardGood = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [status, setStatus] = useState("In Progress");
+
+  <div>
+    {/* Project Info */}
+    {project ? (
+      <div>
+        <h1>{project.name}</h1>
+        <p>{project.description}</p>
+        <p>Deadline: {new Date(project.deadline).toDateString()}</p>
+        <p>Status: {status}</p>
+        <button onClick={() => updateStatus("Completed")}>
+          Mark as Completed
+        </button>
+      </div>
+    ) : (
+      <p>Loading...</p>
+    )}
+
+    {/* Team Members */}
+    <h3>Team Members</h3>
+    <ul>
+      {team.map((member) => (
+        <li key={member.id}>
+          <img src={member.avatar} alt={member.name} width="30" /> {member.name}
+        </li>
+      ))}
+    </ul>
+
+    {/* Comments Section */}
+    <h3>Comments</h3>
+    <ul>
+      {comments.map((comment) => (
+        <li key={comment.id}>{comment.text}</li>
+      ))}
+    </ul>
+    <input
+      type="text"
+      placeholder="Add a comment..."
+      value={newComment}
+      onChange={(e) => setNewComment(e.target.value)}
+    />
+    <button onClick={addComment}>Post</button>
+  </div>;
 };
