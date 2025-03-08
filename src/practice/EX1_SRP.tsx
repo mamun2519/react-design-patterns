@@ -86,12 +86,12 @@ export const UserProfile = () => {
   );
 };
 
-export const Notifications = ({ notifications }: any) => {
+export const Notifications = () => {
   const [notifications, _setNotifications] = useState([
     "New message",
     "Server update",
   ]);
-  const;
+
   return (
     <div>
       <h2>Notifications</h2>
