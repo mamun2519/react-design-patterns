@@ -54,10 +54,6 @@ export const DashboardBad = () => {
 // Good Example:
 
 export const DashboardGood = () => {
-  const [user, _setUser] = useState({
-    name: "John Doe",
-    email: "john@example.com",
-  });
   const [notifications, _setNotifications] = useState([
     "New message",
     "Server update",
@@ -80,11 +76,11 @@ export const DashboardGood = () => {
   );
 };
 
-export const UserProfile = ({
-  user,
-}: {
-  user: { name: string; email: string };
-}) => {
+export const UserProfile = () => {
+  const [user, _setUser] = useState({
+    name: "John Doe",
+    email: "john@example.com",
+  });
   return (
     <div>
       <h2>User Profile</h2>
