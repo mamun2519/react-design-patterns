@@ -54,18 +54,14 @@ export const DashboardBad = () => {
 // Good Example:
 
 export const DashboardGood = () => {
-  const [notifications, _setNotifications] = useState([
-    "New message",
-    "Server update",
-  ]);
-  const [tasks, _setTasks] = useState(["Finish report", "Update project"]);
+  [tasks, _setTasks] = useState(["Finish report", "Update project"]);
 
   return (
     <div>
       <h1>Dashboard</h1>
 
       {/* User Profile */}
-      <UserProfile user={user} />
+      <UserProfile />
 
       {/* Notifications */}
       <Notifications notifications={notifications} />
@@ -91,6 +87,11 @@ export const UserProfile = () => {
 };
 
 export const Notifications = ({ notifications }: any) => {
+  const [notifications, _setNotifications] = useState([
+    "New message",
+    "Server update",
+  ]);
+  const;
   return (
     <div>
       <h2>Notifications</h2>
