@@ -162,15 +162,7 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   <div>
     {/* Project Info */}
     {project ? (
-      <div>
-        <h1>{project.name}</h1>
-        <p>{project.description}</p>
-        <p>Deadline: {new Date(project.deadline).toDateString()}</p>
-        <p>Status: {status}</p>
-        <button onClick={() => updateStatus("Completed")}>
-          Mark as Completed
-        </button>
-      </div>
+      <ProjectInfo project={project} updateStatus={updateStatus} />
     ) : (
       <p>Loading...</p>
     )}
