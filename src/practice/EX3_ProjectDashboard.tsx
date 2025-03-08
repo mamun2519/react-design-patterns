@@ -207,3 +207,19 @@ const ProjectInfo = ({ project, updateStatus }: any) => {
     </div>
   );
 };
+
+const TeamMember = ({ team }: { team: Team }) => {
+  return (
+    <>
+      <h3>Team Members</h3>
+      <ul>
+        {team.map((member) => (
+          <li key={member.id}>
+            <img src={member.avatar} alt={member.name} width="30" />{" "}
+            {member.name}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
