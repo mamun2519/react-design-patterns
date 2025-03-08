@@ -75,14 +75,7 @@ export const DashboardGood = () => {
       <Notifications notifications={notifications} />
 
       {/* Tasks */}
-      <div>
-        <h2>Tasks</h2>
-        <ul>
-          {tasks.map((t, i) => (
-            <li key={i}>{t}</li>
-          ))}
-        </ul>
-      </div>
+      <Tasks Tasks={Tasks} />
     </div>
   );
 };
