@@ -1,3 +1,5 @@
+import { withComponentDataFetch } from "./HX4_HOC";
+
 type BaseResponse = {
   data: unknown;
   loading: boolean;
@@ -28,3 +30,8 @@ export const Users = ({ data, loading, error }: BaseResponse) => {
     </div>
   );
 };
+
+export const UserWithFetchingData = withComponentDataFetch(
+  Users,
+  "https://jsonplaceholder.typicode.com/users"
+);
