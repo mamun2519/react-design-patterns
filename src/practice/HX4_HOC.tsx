@@ -1,7 +1,7 @@
 import { ComponentType, useEffect, useState } from "react";
 
 export const withComponentDataFetch = (
-  Component: ComponentType,
+  Component: ComponentType | any,
   url: string
 ) => {
   return (props: any) => {
