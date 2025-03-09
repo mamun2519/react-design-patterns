@@ -1,6 +1,6 @@
 import { ComponentType, useEffect, useState } from "react";
 
-const withDataFetch = (Component: ComponentType, url: string) => {
+const withComponentDataFetch = (Component: ComponentType, url: string) => {
   return (props: any) => {
     const [data, setData] = useState<unknown>(null);
     const [loading, setLoading] = useState(true);
