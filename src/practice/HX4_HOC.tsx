@@ -40,6 +40,6 @@ const withDataFetch = (Component: ComponentType, url: string) => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    return <Component />;
+    return <Component data={data} {...props} />;
   };
 };
