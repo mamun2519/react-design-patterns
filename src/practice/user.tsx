@@ -11,4 +11,6 @@ type User = {
   email: string;
 };
 
-export const Users = ({ data, loading, error }: BaseResponse) => {};
+export const Users = ({ data, loading, error }: BaseResponse) => {
+  const users = data as User[];
+};
