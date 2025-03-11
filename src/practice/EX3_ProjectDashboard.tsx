@@ -139,9 +139,3 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   }, [projectId]);
 
   // Fetch Comments
-  useEffect(() => {
-    fetch(`/api/projects/${projectId}/comments`)
-      .then((res) => res.json())
-      .then((data) => setComments(data))
-      .catch(() => console.log("Error loading comments"));
-  }, [projectId]);
