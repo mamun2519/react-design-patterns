@@ -153,10 +153,3 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   };
 
   // Handle Adding New Comment
-
-  <div>
-    {/* Project Info */}
-    {project ? (
-      <>
-        <ProjectInfo project={project} status={status} />
-        <UpdateS
