@@ -123,7 +123,3 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   const [project, setProject] = useState<Project | null>(null);
 
   const [team, setTeam] = useState<Team[]>([]);
-
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [newComment, setNewComment] = useState("");
-  const [status, setStatus] = useState("In Progress");
