@@ -179,9 +179,3 @@ const ProjectInfo = ({ project, status }: any) => {
     </div>
   );
 };
-
-const UpdateStatusButton = ({ updateStatus }: any) => {
-  return (
-    <button onClick={() => updateStatus("Completed")}>Mark as Completed</button>
-  );
-};
