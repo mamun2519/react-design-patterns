@@ -145,11 +145,3 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
       .then((data) => setComments(data))
       .catch(() => console.log("Error loading comments"));
   }, [projectId]);
-
-  // Update Status
-  const updateStatus = (newStatus: string) => {
-    setStatus(newStatus);
-    console.log(`Project status updated to: ${newStatus}`);
-  };
-
-  // Handle Adding New Comment
