@@ -168,3 +168,20 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
     )}
   </div>;
 };
+
+const ProjectInfo = ({ project, status }: any) => {
+  return (
+    <div>
+      <h1>{project.name}</h1>
+      <p>{project.description}</p>
+      <p>Deadline: {new Date(project.deadline).toDateString()}</p>
+      <p>Status: {status}</p>
+    </div>
+  );
+};
+
+const UpdateStatusButton = ({ updateStatus }: any) => {
+  return (
+    <button onClick={() => updateStatus("Completed")}>Mark as Completed</button>
+  );
+};
