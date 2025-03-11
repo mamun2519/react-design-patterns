@@ -110,3 +110,16 @@ type Comment = {
   id: number;
   text: string;
 };
+
+type Project = {
+  name: string;
+  description: string;
+  deadline: string;
+  team: Team[];
+  comments: Comment[];
+};
+
+export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
+  const [project, setProject] = useState<Project | null>(null);
+
+  const [team, setTeam] = useState<Team[]>([]);
