@@ -201,11 +201,3 @@ const TeamMember = ({ team }: { team: Team[] }) => {
     </>
   );
 };
-
-const CommentList = ({
-  comments,
-  setComments,
-}: {
-  comments: Comment[];
-  setComments: any;
-}) => {
