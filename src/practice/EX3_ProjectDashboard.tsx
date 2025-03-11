@@ -110,11 +110,3 @@ type Comment = {
   id: number;
   text: string;
 };
-
-type Project = {
-  name: string;
-  description: string;
-  deadline: string;
-  team: Team[];
-  comments: Comment[];
-};
