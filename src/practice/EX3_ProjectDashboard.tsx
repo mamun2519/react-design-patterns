@@ -226,12 +226,5 @@ const CommentList = ({
       </ul>
 
       <input
-        type="text"
-        placeholder="Add a comment..."
-        value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
-      />
-      <button onClick={addComment}>Post</button>
-    </>
-  );
+  
 };
