@@ -22,3 +22,18 @@ export const withComponentDataFetch = (
           const result = await response.json();
           setData(result);
         } catch (err) {
+          if (err instanceof Error && err.name === "AbortError") {
+            return;
+          }
+          setError(
+            err instanceof Error ? err.message : "An unknown error occurred"
+          );
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchData();
+
+  };
+};
