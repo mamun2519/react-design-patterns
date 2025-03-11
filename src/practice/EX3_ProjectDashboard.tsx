@@ -209,10 +209,3 @@ const CommentList = ({
   comments: Comment[];
   setComments: any;
 }) => {
-  const [newComment, setNewComment] = useState("");
-  const addComment = () => {
-    if (newComment.trim() === "") return;
-    setComments([...comments, { id: Date.now(), text: newComment }]);
-    setNewComment("");
-  };
-
