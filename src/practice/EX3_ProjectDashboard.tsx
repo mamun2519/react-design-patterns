@@ -186,10 +186,4 @@ const UpdateStatusButton = ({ updateStatus }: any) => {
   );
 };
 
-const TeamMember = ({ team }: { team: Team[] }) => {
-  return (
-    <>
-      <h3>Team Members</h3>
-    </>
-  );
-};
+const TeamMember = ({ team }: { team: Team[] }) => 
