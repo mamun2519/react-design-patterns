@@ -127,15 +127,3 @@ export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [status, setStatus] = useState("In Progress");
-
-  useEffect(() => {
-    fetch(`/api/projects/${projectId}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProject(data);
-        setTeam(data.team);
-      })
-      .catch(() => console.log("Error loading project"));
-  }, [projectId]);
-
-  // Fetch Comments
