@@ -118,8 +118,3 @@ type Project = {
   team: Team[];
   comments: Comment[];
 };
-
-export const ProjectDashboardGood = ({ projectId }: { projectId: string }) => {
-  const [project, setProject] = useState<Project | null>(null);
-
-  const [team, setTeam] = useState<Team[]>([]);
