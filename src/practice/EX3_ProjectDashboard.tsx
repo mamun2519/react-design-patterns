@@ -185,5 +185,3 @@ const UpdateStatusButton = ({ updateStatus }: any) => {
     <button onClick={() => updateStatus("Completed")}>Mark as Completed</button>
   );
 };
-
-const TeamMember = ({ team }: { team: Team[] }) => 
