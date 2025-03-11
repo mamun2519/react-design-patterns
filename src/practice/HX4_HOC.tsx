@@ -35,5 +35,12 @@ export const withComponentDataFetch = (
 
       fetchData();
 
+      return () => {
+        controller.abort();
+      };
+    }, [url]);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
   };
 };
