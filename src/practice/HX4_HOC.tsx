@@ -13,12 +13,3 @@ export const withComponentDataFetch = (
       const controller = new AbortController();
       const signal = controller.signal;
 
-      const fetchData = async () => {
-        try {
-          const response = await fetch(url, { signal });
-          if (!response.ok) {
-            throw new Error("Failed to fetch data");
-          }
-          const result = await response.json();
-          setData(result);
-        } catch (err) {
