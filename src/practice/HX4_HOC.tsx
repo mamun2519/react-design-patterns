@@ -35,9 +35,5 @@ export const withComponentDataFetch = (
 
       fetchData();
 
-      return () => {
-        controller.abort();
-      };
-    }, [url]);
   };
 };
