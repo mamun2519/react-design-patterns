@@ -216,8 +216,3 @@ const CommentList = ({
     setNewComment("");
   };
 
-  return (
-    <>
-      <h3>Comments</h3>
- 
-};
