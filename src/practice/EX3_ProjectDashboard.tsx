@@ -216,3 +216,22 @@ const CommentList = ({
     setNewComment("");
   };
 
+  return (
+    <>
+      <h3>Comments</h3>
+      <ul>
+        {comments.map((comment) => (
+          <li key={comment.id}>{comment.text}</li>
+        ))}
+      </ul>
+
+      <input
+        type="text"
+        placeholder="Add a comment..."
+        value={newComment}
+        onChange={(e) => setNewComment(e.target.value)}
+      />
+      <button onClick={addComment}>Post</button>
+    </>
+  );
+};
