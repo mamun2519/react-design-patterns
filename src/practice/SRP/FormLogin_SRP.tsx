@@ -42,3 +42,23 @@ const useLoginForm = () => {
 
   return { email, setEmail, password, setPassword, handleSubmit };
 };
+
+export const LoginFormContainer = () => {
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Login</button>
+    </form>
+  );
+};
