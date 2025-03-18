@@ -4,5 +4,9 @@ import { useState } from "react";
 const withLoading = (WrappedComment) => {
   return (props) => {
     const [isLoading, setLoading] = useState(true);
+    seEffect(() => {
+      // Simulate data fetching
+      setTimeout(() => setIsLoading(false), 2000);
+    }, []);
   };
 };
