@@ -37,10 +37,7 @@ export const UserContainer = ({ users }) => {
   return (
     <UserLayout>
       {users.map((user: { id: string; name: string; email: string }) => (
-        <div key={user.id} className="user-card">
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
-        </div>
+        <UserList user={user} />
       ))}
     </UserLayout>
   );
