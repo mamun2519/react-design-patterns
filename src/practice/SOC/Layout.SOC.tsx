@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 //  3. Separating Layout and Content (Without SOC)
-function UserList({ users }) {
+function bedUserList({ users }) {
   return (
     <div className="user-list">
       {users.map((user) => (
@@ -20,4 +20,28 @@ const UserLayout = ({ children }: { children: ReactNode }) => {
   return <div className="user-list">{children}</div>;
 };
 
-const UserContinner = ({ users }) => {};
+const UserList = ({
+  user,
+}: {
+  user: { id: string; name: string; email: string };
+}) => {
+  return (
+    <div key={user.id} className="user-card">
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+    </div>
+  );
+};
+
+export const UserContainer = ({ users }) => {
+  return (
+    <UserLayout>
+      {users.map((user: { id: string; name: string; email: string }) => (
+        <div key={user.id} className="user-card">
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
+      ))}
+    </UserLayout>
+  );
+};
