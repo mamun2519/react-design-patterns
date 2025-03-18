@@ -30,4 +30,8 @@ const useUser = ({ userId }: { userId: string }) => {
       .then((response) => response.json())
       .then((data) => setUser(data));
   }, [userId]);
+
+  return user;
 };
+
+const UserProfileContainer = () => {};
