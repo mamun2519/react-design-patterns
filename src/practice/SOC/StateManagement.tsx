@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Separating State Management (Without SOC)
-export function Counter() {
+export function BedCounter() {
   const [count, setCount] = useState(0);
 
   return (
@@ -19,12 +19,22 @@ const useCounter = () => {
   return { count, increment };
 };
 
-const CounterContainer = () => {
-  const { count, increment } = useCounter();
+const Counter = ({
+  count,
+  increment,
+}: {
+  count: number;
+  increment: () => void;
+}) => {
   return (
     <div>
       <p>Count: {count}</p>
       <button onClick={() => increment()}>Increment</button>
     </div>
   );
+};
+
+export const CounterContainer = () => {
+  const { count, increment } = useCounter();
+  return <Counter count={count} increment={increment} />;
 };
