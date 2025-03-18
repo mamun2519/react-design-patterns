@@ -33,8 +33,12 @@ const useUser = ({ userId }: { userId: string }) => {
 
   return user;
 };
+type User = {
+  name: string;
+  email: string;
+};
 
-const UserProfile = ({ user }: { user: { name: string; email: string } }) => {
+export const UserProfile = ({ user }: { user: User }) => {
   if (!user) return <div>Loading...</div>;
   return (
     <div>
