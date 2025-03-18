@@ -34,12 +34,16 @@ const useUser = ({ userId }: { userId: string }) => {
   return user;
 };
 
-export const UserProfileContainer = ({ userId }: { userId: string }) => {
-  const user = useUser({ userId });
+const UserProfile = ({ user }: { user: { name: string; email: string } }) => {
   return (
     <div>
       <h1>{user.name}</h1>
       <p>{user.email}</p>
     </div>
   );
+};
+
+export const UserProfileContainer = ({ userId }: { userId: string }) => {
+  const user = useUser({ userId });
+  return <UserProfile user={user} />;
 };
