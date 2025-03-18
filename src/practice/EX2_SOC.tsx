@@ -19,3 +19,5 @@ function UserProfile({ userId }) {
     </div>
   );
 }
+
+//* Good example
