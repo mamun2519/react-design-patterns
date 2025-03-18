@@ -1,6 +1,7 @@
 import DragAndDrop from "./examples/lecture_1/EX8_RP4";
 import { useState } from "react";
 import { UserProfileWithLoading } from "./practice/HOC/Loading_HOC";
+import { AuthenticateDAshboard } from "./practice/HOC/Auth_HOC";
 
 export default function App() {
   const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
@@ -74,5 +75,10 @@ export default function App() {
 		</div>
 	); */
   const user = { name: "John Doe", email: "john@example.com" };
-  return <UserProfileWithLoading user={user} />;
+  return (
+    <>
+      <UserProfileWithLoading user={user} />
+      <AuthenticateDAshboard />{" "}
+    </>
+  );
 }

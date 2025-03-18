@@ -16,3 +16,9 @@ const withAuth = (WrappedComponent) => {
     return <WrappedComponent {...props} />;
   };
 };
+
+const Dashboard = () => {
+  return <div>Welcome to the dashboard</div>;
+};
+
+export const AuthenticateDAshboard = withAuth(Dashboard);
