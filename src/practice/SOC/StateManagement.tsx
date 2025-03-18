@@ -18,3 +18,7 @@ const useCounter = () => {
   const increment = () => setCount(count + 1);
   return { count, increment };
 };
+
+const CounterContainer = () => {
+  const { count, increment } = useCounter();
+};
