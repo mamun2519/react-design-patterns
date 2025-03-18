@@ -44,6 +44,8 @@ const useLoginForm = () => {
 };
 
 export const LoginFormContainer = () => {
+  const { email, setEmail, password, setPassword, handleSubmit } =
+    useLoginForm();
   return (
     <form onSubmit={handleSubmit}>
       <input
