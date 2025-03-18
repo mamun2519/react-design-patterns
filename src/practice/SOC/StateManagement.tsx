@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-// Separating State Management (With SOC)
-function Counter() {
+// Separating State Management (Without SOC)
+export function Counter() {
   const [count, setCount] = useState(0);
 
   return (
@@ -11,3 +11,10 @@ function Counter() {
     </div>
   );
 }
+
+// With SOC
+const useCounter = () => {
+  const [count, setCount] = useState(0);
+  const increment = () => setCount(count + 1);
+  return { count, increment };
+};
