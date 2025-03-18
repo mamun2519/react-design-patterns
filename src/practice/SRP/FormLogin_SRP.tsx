@@ -42,7 +42,13 @@ const useLoginForm = () => {
 
   return { email, setEmail, password, setPassword, handleSubmit };
 };
-const LoginFormUi = () => {
+const LoginFormUi = ({
+  email,
+  setEmail,
+  password,
+  setPassword,
+  handleSubmit,
+}: any) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
