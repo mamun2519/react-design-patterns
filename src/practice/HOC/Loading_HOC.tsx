@@ -26,3 +26,7 @@ const UserProfile = ({ user }) => {
     </div>
   );
 };
+
+// Enhanced Component
+
+const UserProfileWithLoading = withLoading(UserProfile);
