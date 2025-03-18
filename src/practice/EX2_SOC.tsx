@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-//bed practice
+//with out SOC
 function UserProfile({ userId }) {
   const [user, setUser] = useState(null);
 
@@ -20,4 +20,14 @@ function UserProfile({ userId }) {
   );
 }
 
-//* Good example
+//* With SOC-------------------
+
+const useUser = ({ userId }: { userId: string }) => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch(`/api/users/${userId}`)
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  }, [userId]);
+};
