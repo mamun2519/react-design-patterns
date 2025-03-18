@@ -28,3 +28,17 @@ function LoginForm() {
     </form>
   );
 }
+
+// * With SRP
+
+const useLoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Email:", email, "Password:", password);
+  };
+
+  return { email, setEmail, password, setPassword, handleSubmit };
+};
