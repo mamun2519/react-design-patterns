@@ -29,4 +29,10 @@ const UserProfile = ({ user }) => {
 
 // Enhanced Component
 
-const UserProfileWithLoading = withLoading(UserProfile);
+export const UserProfileWithLoading = withLoading(UserProfile);
+
+// Usage
+// function App() {
+//   const user = { name: "John Doe", email: "john@example.com" };
+//   return <UserProfileWithLoading user={user} />;
+// }

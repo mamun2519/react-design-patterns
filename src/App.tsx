@@ -1,16 +1,17 @@
-import DragAndDrop from './examples/lecture_1/EX8_RP4';
-import { useState } from 'react';
+import DragAndDrop from "./examples/lecture_1/EX8_RP4";
+import { useState } from "react";
+import { UserProfileWithLoading } from "./practice/HOC/Loading_HOC";
 
 export default function App() {
-	const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-	const [draggedItem, setDraggedItem] = useState<string | null>(null);
+  const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
+  const [draggedItem, setDraggedItem] = useState<string | null>(null);
 
-	const dropZoneConfig = {
-		highlightOnHover: true,
-		maxItems: 3, // Allow up to 3 items to be dropped
-	};
+  const dropZoneConfig = {
+    highlightOnHover: true,
+    maxItems: 3, // Allow up to 3 items to be dropped
+  };
 
-	return (
+  /* return (
 		<div className='container mx-auto'>
 			<DragAndDrop
 				items={items}
@@ -71,5 +72,7 @@ export default function App() {
 				)}
 			/>
 		</div>
-	);
+	); */
+  const user = { name: "John Doe", email: "john@example.com" };
+  return <UserProfileWithLoading user={user} />;
 }
