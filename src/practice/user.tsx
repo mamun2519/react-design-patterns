@@ -1,4 +1,4 @@
-import { withComponentDataFetch } from "./HX4_HOC";
+import { withComponentDataFetch } from "./HOC/HX4_HOC";
 
 type BaseResponse = {
   data: unknown;
