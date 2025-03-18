@@ -21,4 +21,10 @@ const useCounter = () => {
 
 const CounterContainer = () => {
   const { count, increment } = useCounter();
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => increment()}>Increment</button>
+    </div>
+  );
 };
