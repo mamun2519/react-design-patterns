@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Toggle = ({ children }) => {
+export const Toggle = ({ children }: any) => {
   const [on, setOn] = useState(false);
   const toggleHandler = () => setOn(!on);
 
@@ -12,7 +12,7 @@ export const Toggle = ({ children }) => {
 const app = () => {
   return (
     <Toggle>
-      {({ on, toggleHandler }) => {
+      {({ on, toggleHandler }: any) => {
         <div>
           <button onClick={toggleHandler}>{on ? "ON" : "OFF"}</button>
           <p>The toggle is {on ? "on" : "off"}.</p>
