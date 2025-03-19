@@ -1,10 +1,11 @@
 //create a context for sharing state
 
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const TabsContext = createContext();
+const TabsContext = createContext(0);
 
 // Parent Component manage state
-const Tabs = ()=>{
+const Tabs = ({children})=>{
+      const [activeIndex, setActiveIndex] = useState(0)
       return ()
 }
