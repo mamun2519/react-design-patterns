@@ -50,3 +50,23 @@ const TabPanels = ({ children }) => {
 function TabPanel({ children }) {
   return <div className="tab-panel">{children}</div>;
 }
+
+// use example
+
+const App = () => {
+  return (
+    <Tabs>
+      <Tablist>
+        <Tab index={0}>Tab 1</Tab>
+        <Tab index={1}>Tab 2</Tab>
+        <Tab index={2}>Tab 3</Tab>
+      </Tablist>
+
+      <TabPanels>
+        <TabPanel>Content for Tab 1</TabPanel>
+        <TabPanel>Content for Tab 2</TabPanel>
+        <TabPanel>Content for Tab 3</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
