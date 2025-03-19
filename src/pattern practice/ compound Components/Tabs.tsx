@@ -16,7 +16,7 @@ export const Tabs = ({ children }) => {
 
 // child component for tab header
 
-export const Tablist = ({ children }) => {
+export const Tablist = ({ children }: any) => {
   return <div>{children}</div>;
 };
 
