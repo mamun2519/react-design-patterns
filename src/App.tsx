@@ -2,6 +2,7 @@ import DragAndDrop from "./examples/lecture_1/EX8_RP4";
 import { useState } from "react";
 import { UserProfileWithLoading } from "./practice/HOC/Loading_HOC";
 import { AuthenticateDAshboard } from "./practice/HOC/Auth_HOC";
+import { UserDataFetching } from "./practice/RP/DataFetching_RP";
 
 export default function App() {
   const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
@@ -79,6 +80,19 @@ export default function App() {
     <>
       <UserProfileWithLoading user={user} />
       <AuthenticateDAshboard />{" "}
+      <UserDataFetching
+        url="https://jsonplaceholder.typicode.com/users"
+        render={({ data, loading }) => {
+          if (loading) return <div>Loading...</div>;
+          return (
+            <ul>
+              {data.map((user) => (
+                <li key={user.id}>{user.name}</li>
+              ))}
+            </ul>
+          );
+        }}
+      />
     </>
   );
 }
