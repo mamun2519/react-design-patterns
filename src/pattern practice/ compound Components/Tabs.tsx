@@ -37,7 +37,7 @@ export const Tab = ({ index, children }) => {
 
 // Child Component for Tab Panels
 
-export const TabPanels = ({ children }) => {
+export const TabPanels = ({ children }: any) => {
   const { activeIndex } = useContext(TabsContext);
   return (
     <div className="tab-panels">
