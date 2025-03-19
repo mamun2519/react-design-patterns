@@ -4,6 +4,7 @@ import { UserProfileWithLoading } from "./pattern practice/HOC/Loading_HOC";
 import { AuthenticateDAshboard } from "./pattern practice/HOC/Auth_HOC";
 import { UserDataFetching } from "./pattern practice/RP/DataFetching_RP";
 import { Toggle } from "./pattern practice/RP/ToogleTacker_PR";
+import { AdminDataFetching } from "./pattern practice/funcation as props/AdminDataFetching";
 
 export default function App() {
   const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
@@ -106,6 +107,20 @@ export default function App() {
           );
         }}
       />
+
+      {/*  funcation as a props patterns */}
+      <AdminDataFetching url="https://jsonplaceholder.typicode.com/users">
+        {({ data, loading }) => {
+          if (loading) return <div>Loading...</div>;
+          return (
+            <ul>
+              {data.map((user) => (
+                <li key={user.id}>{user.name}</li>
+              ))}
+            </ul>
+          );
+        }}
+      </AdminDataFetching>
     </>
   );
 }

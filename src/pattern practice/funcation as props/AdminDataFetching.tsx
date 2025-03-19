@@ -1,6 +1,6 @@
 import { Children, useEffect, useState } from "react";
 
-const AdminDataFetching = ({ url, children }) => {
+export const AdminDataFetching = ({ url, children }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
