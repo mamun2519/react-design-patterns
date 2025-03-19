@@ -47,7 +47,7 @@ export const TabPanels = ({ children }) => {
 };
 
 // Child Component for Individual Panel
-export function TabPanel({ children }) {
+export function TabPanel({ children }: any) {
   return <div className="tab-panel">{children}</div>;
 }
 
