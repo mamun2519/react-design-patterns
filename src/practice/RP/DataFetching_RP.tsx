@@ -22,7 +22,16 @@ const app = () => {
     <div>
       <UserDataFetching
         url="https://jsonplaceholder.typicode.com/users"
-        render={({ data, loading }) => {}}
+        render={({ data, loading }) => {
+          if (loading) return <div>Loading...</div>;
+          return (
+            <ul>
+              {data.map((user) => (
+                <li key={user.id}>{user.name}</li>
+              ))}
+            </ul>
+          );
+        }}
       />
     </div>
   );
