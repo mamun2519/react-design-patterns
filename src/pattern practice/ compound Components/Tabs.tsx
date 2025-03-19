@@ -13,3 +13,5 @@ const Tabs = ({ children }) => {
     </TabsContext.Provider>
   );
 };
+
+// child component for tab header
