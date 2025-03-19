@@ -22,7 +22,7 @@ export const Tablist = ({ children }) => {
 
 // Child Component for Individual Tab
 
-export const Tab = ({ index, children }) => {
+export const Tab = ({ index, children }: any) => {
   const { activeIndex, setActiveIndex } = useContext(TabsContext);
   const isActive = index === activeIndex;
   return (
