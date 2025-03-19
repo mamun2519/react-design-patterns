@@ -6,3 +6,13 @@ export const Toggle = ({ render }) => {
 
   return render({ on, toggle });
 };
+
+// use example
+
+const app = () => {
+      return (
+            <Toggle render={({on , toggle}) => {
+                  return ()
+            }} />
+      )
+}
