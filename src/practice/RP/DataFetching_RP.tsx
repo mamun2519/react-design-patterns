@@ -16,4 +16,14 @@ export const UserDataFetching = ({ url, render }) => {
   return render({ data, loading });
 };
 
-//
+//use example
+const app = () => {
+  return (
+    <div>
+      <UserDataFetching
+        url="https://jsonplaceholder.typicode.com/users"
+        render={({ data, loading }) => {}}
+      />
+    </div>
+  );
+};
