@@ -1,1 +1,1 @@
-export const UserDataFetching = () => {};
+export const UserDataFetching = ({ url, render }) => {};
