@@ -1,6 +1,6 @@
 //create a context for sharing state
 
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const TabsContext = createContext();
 
@@ -18,4 +18,19 @@ const Tabs = ({ children }) => {
 
 const Tablist = ({ children }) => {
   return <div>{children}</div>;
+};
+
+// Child Component for Individual Tab
+
+const Tab = ({ index, children }) => {
+  const { activeIndex, setActiveIndex } = useContext(TabsContext);
+  const isActive = index === activeIndex;
+  return (
+    <button
+      className={`tab ${isActive ? "active" : ""}`}
+      onClick={() => setActiveIndex(index)}
+    >
+      {children}
+    </button>
+  );
 };
