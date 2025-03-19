@@ -3,6 +3,7 @@ import { useState } from "react";
 import { UserProfileWithLoading } from "./practice/HOC/Loading_HOC";
 import { AuthenticateDAshboard } from "./practice/HOC/Auth_HOC";
 import { UserDataFetching } from "./practice/RP/DataFetching_RP";
+import { Toggle } from "./practice/RP/ToogleTacker_PR";
 
 export default function App() {
   const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
@@ -79,7 +80,8 @@ export default function App() {
   return (
     <>
       <UserProfileWithLoading user={user} />
-      <AuthenticateDAshboard />{" "}
+      <AuthenticateDAshboard />
+      {/* // Rendering props */}
       <UserDataFetching
         url="https://jsonplaceholder.typicode.com/users"
         render={({ data, loading }) => {
@@ -90,6 +92,17 @@ export default function App() {
                 <li key={user.id}>{user.name}</li>
               ))}
             </ul>
+          );
+        }}
+      />
+
+      <Toggle
+        render={({ on, toggle }) => {
+          return (
+            <div>
+              <button onClick={toggle}>{on ? "ON" : "OFF"}</button>
+              <p>The toggle is {on ? "on" : "off"}.</p>
+            </div>
           );
         }}
       />
