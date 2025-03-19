@@ -45,3 +45,8 @@ const TabPanels = ({ children }) => {
     </div>
   );
 };
+
+// Child Component for Individual Panel
+function TabPanel({ children }) {
+  return <div className="tab-panel">{children}</div>;
+}
