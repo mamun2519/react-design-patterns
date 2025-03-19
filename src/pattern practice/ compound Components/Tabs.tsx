@@ -5,7 +5,7 @@ import React, { createContext, useContext, useState } from "react";
 const TabsContext = createContext();
 
 // Parent Component manage state
-const Tabs = ({ children }) => {
+export const Tabs = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <TabsContext.Provider value={{ activeIndex, setActiveIndex }}>
@@ -16,13 +16,13 @@ const Tabs = ({ children }) => {
 
 // child component for tab header
 
-const Tablist = ({ children }) => {
+export const Tablist = ({ children }) => {
   return <div>{children}</div>;
 };
 
 // Child Component for Individual Tab
 
-const Tab = ({ index, children }) => {
+export const Tab = ({ index, children }) => {
   const { activeIndex, setActiveIndex } = useContext(TabsContext);
   const isActive = index === activeIndex;
   return (
@@ -37,7 +37,7 @@ const Tab = ({ index, children }) => {
 
 // Child Component for Tab Panels
 
-const TabPanels = ({ children }) => {
+export const TabPanels = ({ children }) => {
   const { activeIndex } = useContext(TabsContext);
   return (
     <div className="tab-panels">
@@ -47,7 +47,7 @@ const TabPanels = ({ children }) => {
 };
 
 // Child Component for Individual Panel
-function TabPanel({ children }) {
+export function TabPanel({ children }) {
   return <div className="tab-panel">{children}</div>;
 }
 

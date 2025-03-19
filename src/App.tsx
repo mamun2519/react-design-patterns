@@ -5,6 +5,13 @@ import { AuthenticateDAshboard } from "./pattern practice/HOC/Auth_HOC";
 import { UserDataFetching } from "./pattern practice/RP/DataFetching_RP";
 import { Toggle } from "./pattern practice/RP/ToogleTacker_PR";
 import { AdminDataFetching } from "./pattern practice/funcation as props/AdminDataFetching";
+import {
+  Tab,
+  Tablist,
+  TabPanel,
+  TabPanels,
+  Tabs,
+} from "./pattern practice/ compound Components/Tabs";
 
 export default function App() {
   const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
@@ -121,6 +128,21 @@ export default function App() {
           );
         }}
       </AdminDataFetching>
+
+      {/* compound component pattern */}
+      <Tabs>
+        <Tablist>
+          <Tab index={0}>Tab 1</Tab>
+          <Tab index={1}>Tab 2</Tab>
+          <Tab index={2}>Tab 3</Tab>
+        </Tablist>
+
+        <TabPanels>
+          <TabPanel>Content for Tab 1</TabPanel>
+          <TabPanel>Content for Tab 2</TabPanel>
+          <TabPanel>Content for Tab 3</TabPanel>
+        </TabPanels>
+      </Tabs>
     </>
   );
 }
