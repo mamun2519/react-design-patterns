@@ -6,3 +6,9 @@ export const Toggle = ({ children }) => {
 
   return children({ on, toggleHandler });
 };
+
+//* call example
+
+const app = () => {
+  return <Toggle></Toggle>;
+};
