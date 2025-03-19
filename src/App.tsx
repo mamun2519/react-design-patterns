@@ -1,9 +1,17 @@
 import DragAndDrop from "./examples/lecture_1/EX8_RP4";
 import { useState } from "react";
-import { UserProfileWithLoading } from "./practice/HOC/Loading_HOC";
-import { AuthenticateDAshboard } from "./practice/HOC/Auth_HOC";
-import { UserDataFetching } from "./practice/RP/DataFetching_RP";
-import { Toggle } from "./practice/RP/ToogleTacker_PR";
+import { UserProfileWithLoading } from "./pattern practice/HOC/Loading_HOC";
+import { AuthenticateDAshboard } from "./pattern practice/HOC/Auth_HOC";
+import { UserDataFetching } from "./pattern practice/RP/DataFetching_RP";
+import { Toggle } from "./pattern practice/RP/ToogleTacker_PR";
+import { AdminDataFetching } from "./pattern practice/funcation as props/AdminDataFetching";
+import {
+  Tab,
+  Tablist,
+  TabPanel,
+  TabPanels,
+  Tabs,
+} from "./pattern practice/ compound Components/Tabs";
 
 export default function App() {
   const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
@@ -106,6 +114,35 @@ export default function App() {
           );
         }}
       />
+
+      {/*  funcation as a props patterns */}
+      <AdminDataFetching url="https://jsonplaceholder.typicode.com/users">
+        {({ data, loading }) => {
+          if (loading) return <div>Loading...</div>;
+          return (
+            <ul>
+              {data.map((user) => (
+                <li key={user.id}>{user.name}</li>
+              ))}
+            </ul>
+          );
+        }}
+      </AdminDataFetching>
+
+      {/* compound component pattern */}
+      <Tabs>
+        <Tablist>
+          <Tab index={0}>Tab 1</Tab>
+          <Tab index={1}>Tab 2</Tab>
+          <Tab index={2}>Tab 3</Tab>
+        </Tablist>
+
+        <TabPanels>
+          <TabPanel>Content for Tab 1</TabPanel>
+          <TabPanel>Content for Tab 2</TabPanel>
+          <TabPanel>Content for Tab 3</TabPanel>
+        </TabPanels>
+      </Tabs>
     </>
   );
 }
