@@ -15,3 +15,21 @@ const AdminDataFetching = ({ url, children }) => {
 
   return children({ data, loading });
 };
+
+//use case
+const app = () => {
+  return (
+    <AdminDataFetching url="https://jsonplaceholder.typicode.com/users">
+      {({ data, loading }) => {
+        if (loading) return <div>Loading...</div>;
+        return (
+          <ul>
+            {data.map((user) => (
+              <li key={user.id}>{user.name}</li>
+            ))}
+          </ul>
+        );
+      }}
+    </AdminDataFetching>
+  );
+};
