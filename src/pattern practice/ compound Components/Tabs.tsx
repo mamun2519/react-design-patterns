@@ -2,10 +2,14 @@
 
 import { createContext, useState } from "react";
 
-const TabsContext = createContext(0);
+const TabsContext = createContext();
 
 // Parent Component manage state
 const Tabs = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  return <TabsContext.Provider>{children}</TabsContext.Provider>;
+  return (
+    <TabsContext.Provider value={{ activeIndex, setActiveIndex }}>
+      {children}
+    </TabsContext.Provider>
+  );
 };
