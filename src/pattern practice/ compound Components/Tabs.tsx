@@ -1,6 +1,6 @@
 //create a context for sharing state
 
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const TabsContext = createContext();
 
@@ -32,5 +32,16 @@ const Tab = ({ index, children }) => {
     >
       {children}
     </button>
+  );
+};
+
+// Child Component for Tab Panels
+
+const TabPanels = ({ children }) => {
+  const { activeIndex } = useContext(TabsContext);
+  return (
+    <div className="tab-panels">
+      {React.Children.toArray(children)[activeIndex]}
+    </div>
   );
 };
