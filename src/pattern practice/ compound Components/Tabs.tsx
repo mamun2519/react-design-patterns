@@ -15,3 +15,7 @@ const Tabs = ({ children }) => {
 };
 
 // child component for tab header
+
+const Tablist = ({ children }) => {
+  return <div>{children}</div>;
+};
