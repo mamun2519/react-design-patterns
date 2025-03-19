@@ -10,9 +10,16 @@ export const Toggle = ({ render }) => {
 // use example
 
 const app = () => {
-      return (
-            <Toggle render={({on , toggle}) => {
-                  return ()
-            }} />
-      )
-}
+  return (
+    <Toggle
+      render={({ on, toggle }) => {
+        return (
+          <div>
+            <button onClick={toggle}>{on ? "ON" : "OFF"}</button>
+            <p>The toggle is {on ? "on" : "off"}.</p>
+          </div>
+        );
+      }}
+    />
+  );
+};
