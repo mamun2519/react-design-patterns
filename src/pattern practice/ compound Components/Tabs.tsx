@@ -5,7 +5,7 @@ import React, { createContext, useContext, useState } from "react";
 const TabsContext = createContext();
 
 // Parent Component manage state
-export const Tabs = ({ children }) => {
+export const Tabs = ({ children }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <TabsContext.Provider value={{ activeIndex, setActiveIndex }}>
