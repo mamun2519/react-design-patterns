@@ -10,5 +10,14 @@ export const Toggle = ({ children }) => {
 //* call example
 
 const app = () => {
-  return <Toggle></Toggle>;
+  return (
+    <Toggle>
+      {({ on, toggleHandler }) => {
+        <div>
+          <button onClick={toggleHandler}>{on ? "ON" : "OFF"}</button>
+          <p>The toggle is {on ? "on" : "off"}.</p>
+        </div>;
+      }}
+    </Toggle>
+  );
 };
