@@ -36,7 +36,14 @@ const ModelContent = ({ children }) => {
 
 // Use those component
 
-const App = () =>{
-
-      return ()
-}
+const App = () => {
+  return (
+    <Model>
+      <ModelTrigger>Open Model</ModelTrigger>
+      <ModelContent>
+        <h2>Modal Title</h2>
+        <p>This is the modal content.</p>
+      </ModelContent>
+    </Model>
+  );
+};
