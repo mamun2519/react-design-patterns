@@ -14,5 +14,5 @@ const Model = ({ children }) => {
 
 const ModelTrigger = ({ children }) => {
   const { setIsOpen } = useContext(ModelContext);
-  return <button onClick={() => setIsOpen(true)}></button>;
+  return <button onClick={() => setIsOpen(true)}>{children}</button>;
 };
