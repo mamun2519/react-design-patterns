@@ -33,3 +33,10 @@ const ModelContent = ({ children }) => {
     </div>
   );
 };
+
+// Use those component
+
+const App = () =>{
+
+      return ()
+}
