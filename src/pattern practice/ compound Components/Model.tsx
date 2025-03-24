@@ -11,3 +11,5 @@ const Model = ({ children }) => {
     </ModelContext.Provider>
   );
 };
+
+const ModelTrigger = ({ children }) => {};
