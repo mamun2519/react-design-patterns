@@ -19,4 +19,17 @@ const ModelTrigger = ({ children }) => {
 
 const ModelContent = ({ children }) => {
   const { isOpen, setIsOpen } = useContext(ModelContent);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        <button className="modal-close" onClick={() => setIsOpen(false)}>
+          &times;
+        </button>
+        {children}
+      </div>
+    </div>
+  );
 };
